@@ -48,6 +48,7 @@ body{
 }
 .left{
     flex: 60;
+    flex-shrink: 50;
     /* background-color: red; */
     height: 100%;
     position: relative;
@@ -96,6 +97,7 @@ body{
 }
 .right{
     flex: 40;
+    flex-shrink: 50;
     /* background-color: blue; */
     height: 100%;
     display: flex;
