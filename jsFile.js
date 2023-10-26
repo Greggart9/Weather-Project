@@ -32,6 +32,7 @@ navigator.geolocation.getCurrentPosition(function(position) {
           var temperature0 = data.current.temp_c + '°';
           var temperature1 = data.current.temp_f + ' degrees Fahrenheit';
           var location = data.location.region;
+          var current = data.location.tz_id
           var Place = data.location.country;
           var humidity = data.current.humidity + '% humid';
           var wind = data.current.wind_degree + '°';
@@ -39,14 +40,6 @@ navigator.geolocation.getCurrentPosition(function(position) {
           var condition = data.current.condition.text;
           var time = data.location.localtime;
     
-          console.log('TEMPERATURE IN CELSIUS:', temperature);
-          console.log('TEMPERATURE IN FAHRENHEIT:', temperature1);
-          console.log('LOCATION:', location);
-          console.log('HUMIDITY:', humidity);
-          console.log('CONDITION:', wind);
-          console.log('TIME:', time);
-          console.log('CLOUD:', cloud);
-          console.log('COUNTRY:', Place);
     
           control1.innerHTML = temperature;
           control2.innerHTML = cloud;
@@ -54,14 +47,14 @@ navigator.geolocation.getCurrentPosition(function(position) {
           control4.innerHTML = humidity;
           control5.innerHTML = wind;
           Time.innerHTML = time;
-          know.innerHTML = Place
+          know.innerHTML = current
           feel.innerHTML = condition
           box1.innerHTML = temperature0
         }) 
  
  })
 
- 
+
 
 
 
@@ -79,6 +72,7 @@ searchInput.addEventListener('keyup', function(e) {
         var temperature0 = data.current.temp_c + '°';
         var temperature1 = data.current.temp_f + ' degrees Fahrenheit';
         var location = data.location.region;
+        var current = data.location.tz_id
         var Place = data.location.country;
         var wind = data.current.wind_degree + '°';
         var humidity = data.current.humidity + '% humid';
@@ -93,24 +87,15 @@ searchInput.addEventListener('keyup', function(e) {
         control4.innerHTML = humidity;
         control5.innerHTML = wind;
         Time.innerHTML = time;
-        know.innerHTML = Place
+        know.innerHTML = current
         feel.innerHTML = condition
         box1.innerHTML = temperature0
       })
       .catch(error => {
         console.error('Error:', error);
       });
-
-      farenheit.addEventListener('onclick',
-
-    control1.innerHTML = temperature1
-
-
-)
-
-  }
-
-});
+    }
+})
 
 
 
