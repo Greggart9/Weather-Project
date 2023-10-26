@@ -17,7 +17,7 @@ var farenheit = document.getElementById('farenheit')
 navigator.geolocation.getCurrentPosition(function(position) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-    lat = longitude + ',' + latitude g   
+    lat = longitude + ',' + latitude 
       let url = 'http://api.weatherapi.com/v1/current.json?q=' + lat + '&key=e163c9a6346f4544a7481212232610';
     
       fetch(url)
