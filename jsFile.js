@@ -17,12 +17,7 @@ var farenheit = document.getElementById('farenheit')
 navigator.geolocation.getCurrentPosition(function(position) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-    console.log("Latitude: " + latitude);
-    console.log("Longitude: " + longitude);
-
     lat = longitude + ',' + latitude 
-
-      console.log(lat);    
       let url = 'http://api.weatherapi.com/v1/current.json?q=' + lat + '&key=e163c9a6346f4544a7481212232610';
     
       fetch(url)
@@ -32,6 +27,7 @@ navigator.geolocation.getCurrentPosition(function(position) {
           var temperature0 = data.current.temp_c + '°';
           var temperature1 = data.current.temp_f + ' degrees Fahrenheit';
           var location = data.location.region;
+          var current = data.location.tz_id
           var Place = data.location.country;
           var humidity = data.current.humidity + '% humid';
           var wind = data.current.wind_degree + '°';
@@ -39,14 +35,6 @@ navigator.geolocation.getCurrentPosition(function(position) {
           var condition = data.current.condition.text;
           var time = data.location.localtime;
     
-          console.log('TEMPERATURE IN CELSIUS:', temperature);
-          console.log('TEMPERATURE IN FAHRENHEIT:', temperature1);
-          console.log('LOCATION:', location);
-          console.log('HUMIDITY:', humidity);
-          console.log('CONDITION:', wind);
-          console.log('TIME:', time);
-          console.log('CLOUD:', cloud);
-          console.log('COUNTRY:', Place);
     
           control1.innerHTML = temperature;
           control2.innerHTML = cloud;
@@ -54,14 +42,14 @@ navigator.geolocation.getCurrentPosition(function(position) {
           control4.innerHTML = humidity;
           control5.innerHTML = wind;
           Time.innerHTML = time;
-          know.innerHTML = Place
+          know.innerHTML = current
           feel.innerHTML = condition
           box1.innerHTML = temperature0
         }) 
  
  })
 
- 
+
 
 searchInput.addEventListener('keyup', function(e) {
   if (e.key === 'Enter') {
@@ -77,6 +65,7 @@ searchInput.addEventListener('keyup', function(e) {
         var temperature0 = data.current.temp_c + '°';
         var temperature1 = data.current.temp_f + ' degrees Fahrenheit';
         var location = data.location.region;
+        var current = data.location.tz_id
         var Place = data.location.country;
         var wind = data.current.wind_degree + '°';
         var humidity = data.current.humidity + '% humid';
@@ -91,7 +80,7 @@ searchInput.addEventListener('keyup', function(e) {
         control4.innerHTML = humidity;
         control5.innerHTML = wind;
         Time.innerHTML = time;
-        know.innerHTML = Place
+        know.innerHTML = current
         feel.innerHTML = condition
         box1.innerHTML = temperature0
       })
@@ -99,6 +88,7 @@ searchInput.addEventListener('keyup', function(e) {
         console.error('Error:', error);
       });
 
+<<<<<<< HEAD
       farenheit.addEventListener('onclick',
 
     control1.innerHTML = temperature1
@@ -109,3 +99,20 @@ searchInput.addEventListener('keyup', function(e) {
   }
 
 });
+=======
+      searchInput.value = '';
+    }
+    
+})
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> f0b76b823f3676a1b2bfaf20b934d487edcedbf5
