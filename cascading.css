@@ -1,0 +1,130 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(image/img1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: rgb(107, 90, 151); */
+
+}
+.content{
+    width: 70%;
+    height: 80vh;
+    display: flex;
+    background-color: rgba(142, 148, 150, 0.281);
+    border-radius: 5px;
+}
+.left{
+    flex: 60;
+    /* background-color: red; */
+    height: 100%;
+    position: relative;
+}
+
+.logo{
+
+    /* background-color: orangered; */
+    height: 13vh;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+}
+.logo p{
+    margin: 0;
+}
+.down{
+    /* background-color: yellow; */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.box_container{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    /* background-color: aquamarine; */
+    margin-bottom: -20px;
+    padding-left: 40px;
+    
+}
+.box1 p {
+    font-size: 5rem;
+    margin: 0;
+}
+.box2 p{
+    margin: 0;
+}
+.celcius{
+    height: 10vh;
+    /* background-color: olivedrab; */
+    display: flex;
+    justify-content: end;
+    padding-right: 20px;   
+
+}
+.right{
+    flex: 40;
+    /* background-color: blue; */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.right_content{
+    /* background-color: yellow; */
+    height: 90%;
+    width: 70%;
+}
+#search{
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    outline-color: beige;
+    background-color: rgb(229, 229, 231);
+}
+::placeholder{
+    padding-left: 10px;
+}
+
+.title_one{
+    font-size: 1.5rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.weather_details{
+    font-size: 1.2rem;
+}
+.template1{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.template2{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.template3{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.template4{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.template5{
+    display: flex;
+    justify-content: space-between;
+}
