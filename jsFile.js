@@ -14,6 +14,20 @@ var box1 = document.getElementById('box1')
 var celsius = document.getElementById("celsius")
 var farenheit = document.getElementById('farenheit')
 
+
+// BACKGROUND
+
+const backgrounds = ['body','background2', 'background3', 'background4'];
+let currentIndex = 0;
+
+function changeBackground() {
+  document.body.className = backgrounds[currentIndex];
+  currentIndex = (currentIndex + 1) % backgrounds.length; 
+}
+
+setInterval(changeBackground, 10000); 
+
+
 navigator.geolocation.getCurrentPosition(function(position) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
@@ -92,3 +106,4 @@ searchInput.addEventListener('keyup', function(e) {
 
 
 });
+
