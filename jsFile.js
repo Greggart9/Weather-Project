@@ -63,8 +63,6 @@ navigator.geolocation.getCurrentPosition(function(position) {
 
  
 
-
-
 searchInput.addEventListener('keyup', function(e) {
   if (e.key === 'Enter') {
     var userInput = searchInput.value;
@@ -111,14 +109,3 @@ searchInput.addEventListener('keyup', function(e) {
   }
 
 });
-
-
-
-
-
-
-
-
-
-
-
