@@ -17,9 +17,6 @@ var farenheit = document.getElementById('farenheit')
 navigator.geolocation.getCurrentPosition(function(position) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-    console.log("Latitude: " + latitude);
-    console.log("Longitude: " + longitude);
-
     lat = longitude + ',' + latitude 
 
       console.log(lat);    
@@ -94,7 +91,10 @@ searchInput.addEventListener('keyup', function(e) {
       .catch(error => {
         console.error('Error:', error);
       });
+
+      searchInput.value = '';
     }
+    
 })
 
 
