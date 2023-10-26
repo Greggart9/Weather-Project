@@ -87,32 +87,8 @@ searchInput.addEventListener('keyup', function(e) {
       .catch(error => {
         console.error('Error:', error);
       });
-
-<<<<<<< HEAD
-      farenheit.addEventListener('onclick',
-
-    control1.innerHTML = temperature1
-
-
-)
-
+      searchInput.value = '';
   }
 
+
 });
-=======
-      searchInput.value = '';
-    }
-    
-})
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> f0b76b823f3676a1b2bfaf20b934d487edcedbf5
