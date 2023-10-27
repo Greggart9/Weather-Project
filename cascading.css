@@ -76,7 +76,7 @@ body{
     justify-content: start;
     align-items: center;
     /* background-color: aquamarine; */
-    margin-bottom: -20px;
+    
     padding-left: 40px;
     
 }
@@ -93,8 +93,15 @@ body{
     display: flex;
     justify-content: end;
     padding-right: 20px;   
-
 }
+#farenheit{
+    cursor: pointer;
+}
+#celsius{
+    cursor: pointer;
+}
+
+
 .right{
     flex: 40;
     flex-shrink: 50;
@@ -160,4 +167,74 @@ body{
 .template5{
     display: flex;
     justify-content: space-between;
+}
+@media screen and (max-width: 1265px){
+    .content{
+        width: 80%;
+    }
+
+}
+
+@media screen and (max-width: 1115px){
+    .left{
+        flex: 50;
+    }
+    .right{
+        flex: 50;
+    }
+    .box1 p{
+        font-size: 4rem;
+    }
+    .box2 p{
+        font-size: 0.8rem;
+    }
+    .celcius{
+        padding-top: 10px;
+        
+    }
+
+}
+
+@media screen and (max-width: 921px){
+    .content{
+        width: 90%;
+    }
+
+}
+
+@media screen and (max-width: 793px){
+    .title_one{
+        font-size: 1.2rem;
+    }
+    .weather_details{
+        font-size: 1rem;
+    }
+
+}
+
+@media screen and (max-width: 680px){
+    .box_container{
+        flex-direction: column;
+        padding-left    : 40px;
+        margin: 0;
+        align-items: start;
+    }
+    .box1 p{
+        font-size: 3rem;
+    }
+    .box2{
+        margin-top: -10px;
+    }
+    .celcius{
+        justify-content: start;
+        padding-left    : 40px;
+        
+    }
+    .left{
+        flex: 40;
+    }
+    .right{
+        flex: 60;
+    }
+
 }

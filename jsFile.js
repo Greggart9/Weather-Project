@@ -66,11 +66,16 @@ navigator.geolocation.getCurrentPosition(function(position) {
 
           farenheit.addEventListener('click' , function() {
             box1.innerHTML = far;
-            weatherdata1.innerHTML = temperature1;            
+            weatherdata1.innerHTML = temperature1;
+            farenheit.style.fontWeight = 700
+            celsius.style.fontWeight = 500 
+
           })
           celsius.addEventListener('click' , function() {
             box1.innerHTML = temperature0;
-            weatherdata1.innerHTML = temperature0;  
+            weatherdata1.innerHTML = temperature0;
+            celsius.style.fontWeight = 700
+            farenheit.style.fontWeight = 500 
           })
         }) 
  
