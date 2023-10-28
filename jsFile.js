@@ -141,3 +141,75 @@ searchInput.addEventListener('keyup', function(e) {
 
 });
 
+
+       // THE TEMPERTURE CHART
+       
+       const current = new Date();
+const currentHour = current.getHours();
+const currentMinutes = current.getMinutes();
+const hoursAgo = [0, 1, 2, 3, 4];
+const temperatureData = [];
+
+function fetchHistoricalData(hourAgo) {
+    const targetTime = new Date(current);
+    targetTime.setHours(current.getHours() - hourAgo);
+
+    navigator.geolocation.getCurrentPosition(function(position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        const lat = latitude + ',' + longitude;
+
+        const apiUrl = 'http://api.weatherapi.com/v1/current.json?q=' + lat + '&key=e163c9a6346f4544a7481212232610';
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const temperature = data.current.temp_c ;
+                temperatureData.push(temperature);
+                if (temperatureData.length === hoursAgo.length) {
+                    createTemperatureChart();
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching historical weather data:', error);
+            });
+    });
+}
+
+function createTemperatureChart() {
+    const ctx = document.getElementById('temperatureChart').getContext('2d');
+
+    const labels = [
+        `${currentHour}:${currentMinutes < 10 ? '0' : ''}${currentMinutes}`,
+        `${currentHour - 1}:${currentMinutes < 10 ? '0' : ''}${currentMinutes - 1}`,
+        `${currentHour - 2}:${currentMinutes < 10 ? '0' : ''}${currentMinutes - 2}`,
+        `${currentHour - 3}:${currentMinutes < 10 ? '0' : ''}${currentMinutes - 3}`,
+        `${currentHour - 4}:${currentMinutes < 10 ? '0' : ''}${currentMinutes - 4}`
+    ];
+
+    const temperatureChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Temperature (°C)',
+                data: temperatureData,
+                borderColor: 'black',
+                borderWidth: 0.5
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+hoursAgo.forEach(hour => {
+    fetchHistoricalData(hour);
+});
+
+

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Forecast</title>
     <link rel="stylesheet" href="cascading.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="body">
 
@@ -13,7 +14,7 @@
             <div class="left">
                 <div class="left_container">
                     <div class="logo">
-                        <p>Weather.Now</p>
+                        <p>Greg.Bot</p>
                     </div>
                     <div class="down">
                         <div class="box_container">
@@ -86,7 +87,9 @@
                     <!-- THE DIVIDER -->
                     <hr>
 
-                    <!-- TEMPERATURE -->
+                    <!-- TEMPERATURE CHART -->
+                    <canvas id="temperatureChart"></canvas>
+
                     
 
                 </div>
@@ -95,6 +98,7 @@
             
         </div>
     </div>
+
     <script src="jsFile.js"></script>
     
 </body>
