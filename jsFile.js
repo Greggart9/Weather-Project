@@ -43,9 +43,9 @@ navigator.geolocation.getCurrentPosition(function(position) {
           var temperature1 = data.current.temp_f + '°F';
           var location = data.location.region;
           var current = data.location.tz_id
-          var humidity = data.current.humidity + '% humid';
+          var humidity = data.current.humidity + '%';
           var wind = data.current.wind_degree + '°';
-          var cloud = data.current.cloud + '% cloudy';
+          var cloud = data.current.cloud + '%';
           var condition = data.current.condition.text;
           var time_date = data.location.localtime;
           var far = temperature1;
@@ -100,8 +100,8 @@ searchInput.addEventListener('keyup', function(e) {
         var location = data.location.region;
         var current = data.location.tz_id
         var wind = data.current.wind_degree + '°';
-        var humidity = data.current.humidity + '% humid';
-        var cloud = data.current.cloud + '% cloudy';
+        var humidity = data.current.humidity + '%';
+        var cloud = data.current.cloud + '%';
         var condition = data.current.condition.text;
         var time = data.location.localtime;
         var far = temperature1
